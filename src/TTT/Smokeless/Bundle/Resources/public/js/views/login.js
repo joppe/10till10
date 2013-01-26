@@ -4,6 +4,11 @@
 |--------------------------------------------------------
 */
 App.Views.Login = Backbone.View.extend({
+
+	tagName: 'div',
+
+	className: 'login',
+
 	events: {
 		'click #fb-connect' : 'connect'
 	},

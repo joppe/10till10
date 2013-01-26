@@ -40,6 +40,7 @@ App.Router = Backbone.Router.extend({
             model: this.user
         }).el);
 	}
+
 });
 
 jQuery(function () {

@@ -34,4 +34,20 @@ fbHelper = {
 		});
 	}
 
+	/**
+	 * Open graph action
+	 */
+	fb_login: function (og_url) {
+		FB.api(
+			'/me/quitsmoker:quit',
+			'post',
+			{ smoking: og_url },
+			function(response) {
+				if (!response || response.error) {
+					alert('test');
+				}
+			}
+		);
+	}
+
 };
