@@ -7,7 +7,7 @@ fbHelper = {
 	 * @param string, fields
 	 * @param function, callback
 	 */
-	fb_login: function (permissions, fields, callback) {
+	login: function (permissions, fields, callback) {
 		FB.login(function(response) {
 			if (response.authResponse) {
 				var auth_response = response.authResponse;
@@ -37,7 +37,7 @@ fbHelper = {
 	/**
 	 * Open graph action
 	 */
-	og_action: function (og_url) {
+	action: function (og_url) {
 		FB.api(
 			'/me/quitsmoker:quit',
 			'post',

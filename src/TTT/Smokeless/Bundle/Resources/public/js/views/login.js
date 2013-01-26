@@ -23,8 +23,23 @@ App.Views.Login = Backbone.View.extend({
 		e.preventDefault();
 
 		// login with facebook
-		fb_login('email, publish_stream', 'id, name, gender', function(response) {
-			console.log(response);
+		fbHelper.login('email', 'id, name, gender', function(auth_response, api_response) {
+
+			// set user settings
+			App.Settings.accessToken	= auth_response.accessToken;
+			App.Settings.signed_request	= auth_response.signedRequest;
+			App.Settings.userId			= api_response.id;
+			App.Settings.name			= api_response.name;
+			App.Settings.email			= api_response.email;
+			App.Settings.gender			= api_response.gender;
+
+
+			this.model.set({fb_uid:
+
+			})
+
+			// goto form
+			App.Instance.navigate('form', {trigger: true});
 		});
 	}
 

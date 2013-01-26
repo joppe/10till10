@@ -3,7 +3,8 @@
  */
 var App = {
 	Views : {},
-	Models : {}
+	Models : {},
+	Settings: {}
 };
 
 /*
@@ -16,6 +17,7 @@ App.Router = Backbone.Router.extend({
 	routes: {
 		"": "form",
 		"form": "form",
+		"login": "login",
 		"progress": "progress"
 	},
 
