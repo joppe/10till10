@@ -25,19 +25,19 @@ App.Router = Backbone.Router.extend({
     },
 
 	login: function () {
-		$('.center').html(new App.Views.Login({
+		$('#main').html(new App.Views.Login({
             model: this.user
         }).el);
 	},
 
 	progress: function () {
-		$(".center").html(new App.Views.Progress({
+		$("#main").html(new App.Views.Progress({
             model: this.user
         }).el);
 	},
 
 	form: function () {
-		$(".center").html(new App.Views.Form({
+		$("#main").html(new App.Views.Form({
             model: this.user
         }).el);
 	}
@@ -49,6 +49,6 @@ App.Router = Backbone.Router.extend({
 |--------------------------------------------------------
 */
 tpl.loadTemplates(['login','form','progress'], function () {
-	App.Instance = new App.Router(new App.Models.User());
+	App.Instance = new App.Router();
 	Backbone.history.start();
 });
