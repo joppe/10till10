@@ -3,7 +3,7 @@
 |	Home
 |--------------------------------------------------------
 */
-App.Views.Home = Backbone.View.extend({
+App.Views.Progress = Backbone.View.extend({
 
 	initialize: function () {
 		this.render();
