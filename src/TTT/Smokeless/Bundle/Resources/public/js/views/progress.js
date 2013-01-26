@@ -1,17 +1,21 @@
 /*
 |--------------------------------------------------------
-|	Home
+|	Progress
 |--------------------------------------------------------
 */
 App.Views.Progress = Backbone.View.extend({
+    tagName: 'div',
+
+    className: 'progress',
 
 	initialize: function () {
-		this.render();
+        this.template = _.template($('#tpl-progress').html());
+        this.render();
 	},
 
 	render: function () {
-		$(this.el).html('#id');
-		return this;
+        this.$el.html(this.template(this.model.attributes));
+        return this;
 	}
 
 });
