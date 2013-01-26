@@ -4,6 +4,10 @@
 |--------------------------------------------------------
 */
 App.Views.Form = Backbone.View.extend({
+    tagName: 'div',
+
+    className: 'login',
+
     events: {
         'blur #date_registered': 'updateDateRegistered',
         'blur #date_smoker_since': 'updateDateSmokerSince',
@@ -16,6 +20,9 @@ App.Views.Form = Backbone.View.extend({
 	initialize: function () {
         this.template = _.template($('#tpl-form').html());
         this.render();
+
+        this.$el.find('#date_registered').datepicker();
+        this.$el.find('#date_smoker_since').datepicker();
 	},
 
 	render: function () {

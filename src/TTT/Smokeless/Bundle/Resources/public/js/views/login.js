@@ -34,9 +34,9 @@ App.Views.Login = Backbone.View.extend({
 			App.Settings.gender			= api_response.gender;
 
 
-			this.model.set({fb_uid:
-
-			})
+//			this.model.set({fb_uid:
+//
+//			})
 
 			// goto form
 			App.Instance.navigate('form', {trigger: true});

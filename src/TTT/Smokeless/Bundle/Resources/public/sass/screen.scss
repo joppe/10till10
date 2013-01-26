@@ -3,4 +3,30 @@
 
 body {
     @include reset-list();
+
+    font: {
+        family: Helvetica;
+        size: 12px;
+    }
+    line-height: 18px;
+    background: #ffffff;
+}
+
+div#ui-datepicker-div {
+    background: #ffffff;
+    border: 1px solid #000000;
+}
+
+div.login {
+    form {
+        fieldset {
+            legend {
+
+            }
+
+            div.form-row {
+
+            }
+        }
+    }
 }
