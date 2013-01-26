@@ -1,0 +1,24 @@
+{% extends '::base.html.twig' %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/tttsmokeless/js/3rd-party/jquery-min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/tttsmokeless/js/3rd-party/json2.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/tttsmokeless/js/3rd-party/underscore-min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/tttsmokeless/js/3rd-party/backbone-min.js') }}"></script>
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/tttsmokeless/css/screen.css') }}">
+{% endblock %}
+
+{% block body %}
+    <header>
+        {% block header %}{% endblock %}
+    </header>
+    <section id="main">
+        {% block section %}{% endblock %}
+    </section>
+    <footer>
+        {% block footer %}{% endblock %}
+    </footer>
+{% endblock %}
