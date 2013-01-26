@@ -5,21 +5,20 @@
  *
  * For Licensing information, see the LICENSE file included with this project.
  */
+
 namespace TTT\Smokeless\Bundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class IndexController extends Controller
+class BaseController extends Controller
 {
     /**
-     * @Template
-     * @Route("/")
+     * @return \Facebook
      */
-    function indexAction()
+    function getFacebook()
     {
-//        return $this->redirect($this->generateUrl('ttt_smokeless__index_login'));
-        return array();
+        return $this->get('facebook');
     }
 }
