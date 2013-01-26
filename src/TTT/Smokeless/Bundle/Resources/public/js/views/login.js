@@ -6,7 +6,7 @@
 App.Views.Login = Backbone.View.extend({
 
 	events: {
-		'click #login' : 'login'
+		'click #fb-connect' : 'connect'
 	},
 
 	initialize: function () {
@@ -14,11 +14,12 @@ App.Views.Login = Backbone.View.extend({
 	},
 
 	render: function () {
-		$(this.el).html('login');
+		$(this.el).html(tpl.get('login'));
 		return this;
 	},
 
-	login: function () {
+	connect: function (e) {
+		e.preventDefault();
 		alert('test');
 	}
 
