@@ -9,14 +9,18 @@ namespace TTT\Smokeless\Bundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class IndexController
+class IndexController extends Controller
 {
     /**
      * @Template
      * @Route("/")
      */
     function indexAction() {
+
+        var_dump($this->get('fb'));
+        die();
         return arraY();
     }
 }

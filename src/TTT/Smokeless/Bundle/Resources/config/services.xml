@@ -5,5 +5,9 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
+        <service id="fb" class="Facebook">
+            <argument>%fb_id%</argument>
+            <argument>%fp_app_secret%</argument>
+        </service>
     </services>
 </container>

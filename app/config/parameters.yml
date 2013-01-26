@@ -13,3 +13,6 @@ parameters:
 
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+    fb_id:             555574414453799
+    fp_app_secret:     1383ffa6a3cc98a6bfe8ae49dbb3fdb5
