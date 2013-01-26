@@ -21,15 +21,15 @@ App.Router = Backbone.Router.extend({
 	},
 
 	login: function () {
-		$('.center').html(new App.Views.Login().el);
+		$('#main').html(new App.Views.Login().el);
 	},
 
 	progress: function () {
-		$(".center").html(new App.Views.Progress().el);
+		$("#main").html(new App.Views.Progress().el);
 	},
 
 	form: function () {
-		$(".center").html(new App.Views.Form().el);
+		$("#main").html(new App.Views.Form().el);
 	}
 });
 
