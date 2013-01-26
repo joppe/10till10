@@ -30,7 +30,7 @@ class RestController extends BaseController
 
     /**
      * @Route()
-     * @Method("POST")
+     * @Method({"POST", "PUT"})
      */
     public function postAction()
     {
