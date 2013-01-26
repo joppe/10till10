@@ -3,27 +3,28 @@
         <fieldset>
             <legend>Profile</legend>
             <div class="form-row">
+                <input type="text" id="date_registered" name="date_registered" value="00-00-0000">
                 <label for="date_registered">Datum stoppen:</label>
-                <input type="text" id="date_registered" name="date_registered">
             </div>
             <div class="form-row">
+                <input type="text" id="date_smoker_since" name="date_smoker_since" value="00-00-0000">
                 <label for="date_smoker_since">Roker sinds:</label>
-                <input type="text" id="date_smoker_since" name="date_smoker_since">
             </div>
             <div class="form-row">
+                <input type="text" id="number_per_day" name="number_per_day" value="15">
                 <label for="number_per_day">Hoeveel sigaretten:</label>
-                <input type="text" id="number_per_day" name="number_per_day">
             </div>
-            <div class="form-row">
+            <div class="form-row count">
+                <input type="text" id="number_per_pack" name="number_per_pack" value="19">
                 <label for="number_per_pack">Hoeveel sigaretten per pakje:</label>
-                <input type="text" id="number_per_pack" name="number_per_pack">
             </div>
-            <div class="form-row">
+            <div class="form-row price">
+                <span class="euro">&euro;</span>
+                <input type="text" id="cost_per_pack" name="cost_per_pack" value="5,30">
                 <label for="cost_per_pack">Kosten per pakje:</label>
-                <input type="text" id="cost_per_pack" name="cost_per_pack">
             </div>
-            <div class="form-row">
-                <a id="save" href="#">Bewaar gegevens</a>
+            <div class="form-row submit">
+                <a id="save" href="#">Start Quiting</a>
             </div>
         </fieldset>
     </form>

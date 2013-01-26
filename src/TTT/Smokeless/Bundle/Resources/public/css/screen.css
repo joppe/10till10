@@ -108,8 +108,70 @@ body {
   font-family: Helvetica;
   font-size: 12px;
   line-height: 18px;
-  background: #ffffff; }
+  background: black url("../img/body.png") no-repeat; }
 
 div#ui-datepicker-div {
   background: #ffffff;
   border: 1px solid black; }
+
+div.login {
+  padding: 60px 0 0 230px; }
+  div.login form fieldset {
+    padding: 0;
+    margin: 0;
+    border: none; }
+    div.login form fieldset legend {
+      display: none; }
+    div.login form fieldset div.form-row {
+      -webkit-box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.3);
+      -moz-box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.3);
+      -o-box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.3);
+      box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.3);
+      margin: 0 0 15px 0;
+      padding: 15px 0 0 0;
+      width: 350px;
+      background: #ffffff;
+      border: 15px solid black;
+      text-align: center; }
+      div.login form fieldset div.form-row label {
+        display: block;
+        font-size: 20px;
+        line-height: 45px;
+        text-align: center; }
+      div.login form fieldset div.form-row input {
+        -webkit-box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+        -o-box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+        padding: 0 10px;
+        width: 260px;
+        height: 60px;
+        border: 1px solid #b6b6b6;
+        text-align: center;
+        font-size: 50px;
+        font-weight: bold;
+        line-height: 60px; }
+      div.login form fieldset div.form-row.count input {
+        width: 150px; }
+      div.login form fieldset div.form-row.price span {
+        display: inline-block;
+        width: 30px;
+        font-size: 50px;
+        font-weight: bold;
+        line-height: 60px; }
+      div.login form fieldset div.form-row.price input {
+        width: 150px; }
+      div.login form fieldset div.form-row.submit {
+        padding: 0; }
+        div.login form fieldset div.form-row.submit a {
+          display: block;
+          padding: 0 40px 0 0;
+          background: #cb2121 url("../img/arrow.png") no-repeat 300px center;
+          font-size: 35px;
+          font-weight: bold;
+          color: #ffffff;
+          line-height: 90px;
+          text-decoration: none;
+          text-transform: uppercase; }
+          div.login form fieldset div.form-row.submit a:hover {
+            background-position: 310px center; }

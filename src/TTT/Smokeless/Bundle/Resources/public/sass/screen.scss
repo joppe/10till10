@@ -9,7 +9,7 @@ body {
         size: 12px;
     }
     line-height: 18px;
-    background: #ffffff;
+    background: #000000 url('../img/body.png') no-repeat;
 }
 
 div#ui-datepicker-div {
@@ -17,15 +17,101 @@ div#ui-datepicker-div {
     border: 1px solid #000000;
 }
 
+div.progress {
+
+}
+
 div.login {
+    padding: 60px 0 0 230px;
+
     form {
         fieldset {
-            legend {
+            @include reset-spacing();
+            border: none;
 
+            legend {
+                display: none;
             }
 
             div.form-row {
+                @include box-shadow(0, 0, 0, 1, rgba(255, 255, 255, 0.3));
 
+                margin: 0 0 15px 0;
+                padding: 15px 0 0 0;
+                width: 350px;
+                background: #ffffff;
+                border: 15px solid #000000;
+                text-align: center;
+
+                label {
+                    display: block;
+                    font: {
+                        size: 20px;
+                    }
+                    line-height: 45px;
+                    text-align: center;
+                }
+
+                input {
+                    @include box-shadow(0, 1, 1, 0, rgba(0, 0, 0, 0.2), inset);
+
+                    padding: 0 10px;
+                    width: 260px;
+                    height: 60px;
+                    border: 1px solid #b6b6b6;
+                    text-align: center;
+                    font: {
+                        size: 50px;
+                        weight: bold;
+                    }
+                    line-height: 60px;
+                }
+
+                &.count {
+                    input {
+                        width: 150px;
+                    }
+                }
+
+                &.price {
+                    span {
+                        display: inline-block;
+                        width: 30px;
+                        font: {
+                            size: 50px;
+                            weight: bold;
+                        }
+                        line-height: 60px;
+                    }
+
+                    input {
+                        width: 150px;
+                    }
+                }
+
+                &.submit {
+                    padding: 0;
+
+                    a {
+                        display: block;
+                        padding: 0 40px 0 0;
+                        background: #cb2121 url('../img/arrow.png') no-repeat 300px center;
+                        font: {
+                            size: 35px;
+                            weight: bold;
+                        }
+                        color: #ffffff;
+                        line-height: 90px;
+                        text: {
+                            decoration: none;
+                            transform: uppercase;
+                        }
+
+                        &:hover {
+                            background-position: 310px center;
+                        }
+                    }
+                }
             }
         }
     }
