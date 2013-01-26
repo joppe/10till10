@@ -37,7 +37,7 @@ fbHelper = {
 	/**
 	 * Open graph action
 	 */
-	fb_login: function (og_url) {
+	og_action: function (og_url) {
 		FB.api(
 			'/me/quitsmoker:quit',
 			'post',

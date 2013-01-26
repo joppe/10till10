@@ -5,10 +5,6 @@
 */
 App.Views.Login = Backbone.View.extend({
 
-	tagName: 'div',
-
-	className: 'login',
-
 	events: {
 		'click #fb-connect' : 'connect'
 	},
@@ -25,8 +21,11 @@ App.Views.Login = Backbone.View.extend({
 
 	connect: function (e) {
 		e.preventDefault();
-		alert('test');
-	}
 
+		// login with facebook
+		fb_login('email, publish_stream', 'id, name, gender', function(response) {
+			console.log(response);
+		});
+	}
 
 });
