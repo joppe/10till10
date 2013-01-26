@@ -106,6 +106,7 @@ body {
   margin: 0;
   list-style: none;
   font-family: Helvetica;
+  font-weight: normal;
   font-size: 12px;
   line-height: 18px;
   background: black url("../img/body.png") no-repeat; }
