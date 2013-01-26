@@ -6,6 +6,7 @@
 App.Views.Form = Backbone.View.extend({
 
 	initialize: function () {
+        this.model = new App.Models
 		this.render();
 	},
 
