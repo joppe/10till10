@@ -23,6 +23,10 @@ App.Views.Form = Backbone.View.extend({
 
         this.$el.find('#date_registered').datepicker();
         this.$el.find('#date_smoker_since').datepicker();
+
+        _.each(this.events, function (event) {
+            console.log()
+        });
 	},
 
 	render: function () {
