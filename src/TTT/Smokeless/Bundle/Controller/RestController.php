@@ -36,6 +36,7 @@ class RestController extends BaseController
     {
         $em = $this->getDoctrine()->getManager();
         $user = $this->getUser(true);
+
         $data = json_decode($this->getRequest()->getContent(), true);
         $user->loadData($data);
 
@@ -61,8 +62,7 @@ class RestController extends BaseController
         $id = $this->getFacebook()->getUser();
 
         if (!$id) {
-            $id = 1;
-//            throw new \Symfony\Component\Security\Core\Exception\AccessDeniedException();
+            throw new \Symfony\Component\Security\Core\Exception\AccessDeniedException();
         }
 
         try {

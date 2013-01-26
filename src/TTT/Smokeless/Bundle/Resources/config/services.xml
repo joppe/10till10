@@ -6,8 +6,10 @@
 
     <services>
         <service id="facebook" class="Facebook">
-            <argument>%fb_id%</argument>
-            <argument>%fp_app_secret%</argument>
+            <argument type="collection">
+                <argument key="appId">%fb_id%</argument>
+                <argument key="secret">%fp_app_secret%</argument>
+            </argument>
         </service>
     </services>
 </container>

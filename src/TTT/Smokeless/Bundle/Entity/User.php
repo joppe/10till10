@@ -175,8 +175,12 @@ class User
         foreach ($data as $key => $value) {
             switch ($key) {
                 case 'id':
-                case 'fb_uid':
                     // skip
+                    break;
+                case 'fb_uid':
+                    if ($value !== $this->getFbUid()) {
+                        throw new \UnexpectedValueException("The fb_uid does not match");
+                    }
                     break;
                 case 'name':
                     $this->setName($value);
