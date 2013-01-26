@@ -5,12 +5,12 @@ body {
     @include reset-list();
 
     font: {
-        family: Helvetica;
+        family: Arial, sans-serif;
         weight: normal;
         size: 12px;
     }
     line-height: 18px;
-    background: #000000 url('../img/body.png') no-repeat;
+    background: #000000 url('../img/body.jpg') no-repeat center -40px;
 }
 
 div#ui-datepicker-div {
@@ -18,10 +18,88 @@ div#ui-datepicker-div {
     border: 1px solid #000000;
 }
 
-div.progress {
-
+img.logo {
+    display: block;
+    margin: 100px auto 20px auto;
 }
 
+#app {
+    width: 810px;
+    margin: 0 auto;
+}
+
+p.intro {
+    padding: 50px 150px 60px;
+    text-align: center;
+    font-size: 22px;
+    line-height: 30px;
+    color: #cb2121;
+    font-family: 'Georgia', serif;
+    text-shadow: 0px 0px 2px #fff;
+}
+a#fb-connect {
+    margin: 0 auto;
+    display: block;
+    width: 212px;
+    height: 41px;
+    padding: 20px;
+    background: url('../img/start.png') no-repeat top center;
+    text-indent: -999em;
+    overflow: hidden;
+}
+
+.ui-datepicker {
+    width: 275px;
+    text-align: center;
+    font-size: 14px;
+}
+.ui-datepicker td a {
+    text-align: center;
+}
+
+.logo-small {
+    display: block;
+    padding: 20px 0 20px 0;    
+}
+#stats {
+    margin: 0;
+    padding: 0;
+}
+#stats li {
+    @include box-shadow(0, 0, 0, 1, rgba(255, 255, 255, 0.3));
+
+    list-style: none;
+    margin: 0 0 15px 0;
+    padding: 20px 0 0 0;
+    width: 350px;
+    background: #ffffff;
+    border: 15px solid #000000;
+    text-align: center;
+    font-size: 60px;
+    line-height: 70px;
+    font-weight: bold;
+}
+#stats span.caption {
+    height: auto;
+    padding: 0 0 10px 0;
+    font-size: 20px;
+    line-height: 24px;
+    display: block;
+    font-weight: normal;    
+}
+.support { 
+    text-align: center;  
+    margin: 0 0 15px 0;
+    padding: 20px 0 0 0;
+    width: 350px;
+    background: #ffffff;
+    border: 15px solid #000000;
+    float: right;
+}
+.support img {
+    display: block;
+    margin: 0 auto;
+}  
 div.login {
     padding: 60px 0 0 230px;
 
@@ -76,7 +154,10 @@ div.login {
 
                 &.price {
                     span {
+                        position: relative;
+                        margin: 0 0 0 -70px;
                         display: inline-block;
+                        padding: 0 10px;
                         width: 30px;
                         font: {
                             size: 50px;
