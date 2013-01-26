@@ -44,7 +44,7 @@ fbHelper = {
 				}
 			}
 		);
-	}
+	},
 
 	/**
 	 * FB share
