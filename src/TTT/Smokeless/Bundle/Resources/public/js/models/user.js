@@ -16,6 +16,25 @@ App.Models.User = Backbone.Model.extend({
         number_per_pack: null
     },
 
+    sync: function (success) {
+        var method = 'create';
+
+        if (this.get('id') !== null) {
+            method = 'update';
+        }
+
+        Backbone.sync(method, this, {
+            url: 'rest',
+            success: function () {
+                success();
+                console.log('success');
+            },
+            error: function () {
+                console.log('error');
+            }
+        });
+    },
+
 	urlRoot: "user",
 
 	initialize: function () {
