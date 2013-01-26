@@ -14,13 +14,40 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class IndexController extends Controller
 {
     /**
-     * @Template
      * @Route("/")
      */
-    function indexAction() {
+    function indexAction()
+    {
+        return $this->redirect($this->generateUrl('ttt_smokeless__index_login'));
+    }
 
-        var_dump($this->get('fb'));
-        die();
-        return arraY();
+
+    /**
+     * @Template
+     * @Route("/login")
+     */
+    function loginAction()
+    {
+        return array();
+    }
+
+
+    /**
+     * @Template
+     * @Route("/form")
+     */
+    function formAction()
+    {
+        return array();
+    }
+
+
+    /**
+     * @Template
+     * @Route("/progress")
+     */
+    function progressAction()
+    {
+        return array();
     }
 }
