@@ -6,7 +6,7 @@
 App.Views.Login = Backbone.View.extend({
 
 	events: {
-		'click #fb-connect' : 'connect'
+		'click #fb-connect': 'connect'
 	},
 
 	initialize: function () {
@@ -31,16 +31,19 @@ App.Views.Login = Backbone.View.extend({
 			App.Settings.accessToken	= auth_response.accessToken;
 			App.Settings.signed_request	= auth_response.signedRequest;
 
-			self.model.set({
-                'fb_uid': api_response.id,
-                'name': api_response.name,
-                'email': api_response.email,
-                'gender': api_response.gender
+            self.model.save({
+                fb_uid: api_response.id,
+                name: api_response.name,
+                email: api_response.email,
+                gender: api_response.gender
+            }, {
+                success: function () {
+                    App.Instance.navigate('form', {trigger: true});
+                }
             });
-            self.model.save();
 
 			// goto form
-			App.Instance.navigate('form', {trigger: true});
+//			App.Instance.navigate('form', {trigger: true});
 		});
 	}
 

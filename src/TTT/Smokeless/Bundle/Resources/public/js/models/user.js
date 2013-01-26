@@ -16,8 +16,8 @@ App.Models.User = Backbone.Model.extend({
         number_per_day: null,
         cost_per_pack: null,
         number_per_pack: null
-    },
-
+    }
+/*
     sync: function (success) {
         var method = 'create';
 
@@ -36,27 +36,20 @@ App.Models.User = Backbone.Model.extend({
                 console.log('error');
             }
         });
-    },
-
-	urlRoot: "user",
-
-	initialize: function () {
-
-	},
-
-	validate: function () {
-
-	}
+    },*/
 });
+/*
 
+*/
 /*
 |--------------------------------------------------------
 |	Users Collection
 |--------------------------------------------------------
-*/
+*//*
+
 App.Models.UserCollection = Backbone.Collection.extend({
 
 	model: App.Models.User,
 
 	url: "user"
-});
+});*/

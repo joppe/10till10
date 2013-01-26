@@ -41,7 +41,11 @@ App.Views.Form = Backbone.View.extend({
     save: function (event) {
         event.preventDefault();
 
-        this.model.save();
+        this.model.save(this.model.attributes, {
+            success: function () {
+                console.log('saved');
+            }
+        });
     },
 
     updateDateRegistered: function () {

@@ -223,6 +223,7 @@ class User
     public function asData()
     {
         return array(
+            'id'                => (int) $this->getId(),
             'name'              => $this->getName(),
             'email'             => $this->getEmail(),
             'gender'            => $this->getGender(),

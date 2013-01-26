@@ -1,0 +1,6 @@
+#!/bin/bash
+
+/TTT/Smokeless/Bundle/Resources/public
+
+sass-watch:
+	sass --watch src/
