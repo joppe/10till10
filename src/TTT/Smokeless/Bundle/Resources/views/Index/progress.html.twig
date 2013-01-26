@@ -1,17 +1,27 @@
 <script type="text/template" id="tpl-progress">
-    <ul>
+
+    <img src="{{ asset('bundles/tttsmokeless/img/logo-small.png') }}" class="logo-small">
+
+    <div class="support">
+        <h2>YOUR SUPPORTERS</h2>
+        <img src="{{ asset('bundles/tttsmokeless/img/support.png') }}" class="logo-small">
+    </div>
+    <ul id="stats">
         <li>
-            <span class="weeks"></span>
-            <span class="days"></span>
-            <span class="hours"></span>
-            <span class="minutes"></span>
+            <span class="weeks">10:</span>
+            <span class="days">1:</span>
+            <span class="hours">2:</span>
+            <span class="minutes">20</span>
+            <span class="caption">Since you last smoked</span>
         </li>
         <li>
             <span class="euro">&euro;</span>
-            <span class="price"></span>
+            <span class="price">209,00</span>
+            <span class="caption">Saved euro’s since you quit smoking</span>
         </li>
         <li>
-            <span class="count"></span>
+            <span class="count">922</span>
+            <span class="caption"> Sigarettes since you quit smoking</span>           
         </li>
     </ul>
 </script>

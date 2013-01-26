@@ -1,8 +1,5 @@
 fbHelper = {
 
-	/**
-	 * fb login
-	 */
 	login: function (permissions, fields, callback) {
 		FB.login(function(response) {
 			if (response.authResponse) {
@@ -30,9 +27,6 @@ fbHelper = {
 		});
 	},
 
-	/**
-	 * Open graph action
-	 */
 	action: function (og_url, type) {
 		FB.api(
 			'/me/quitsmoker:'+ type,
@@ -46,9 +40,6 @@ fbHelper = {
 		);
 	},
 
-	/**
-	 * FB share
-	 */
 	share: function ($el, callback, options) {
 
 		// default options
@@ -74,6 +65,40 @@ fbHelper = {
 				if (typeof callback == 'function') callback(response);
 			} else {
 				return false;
+			}
+		});
+	},
+
+	fb_status: function(fields, callback) {
+		FB.getLoginStatus(function(response) {
+			if (response.status === 'connected') {
+						
+				// get user credentials
+				return this.fb_user(response.authResponse, fields, callback);
+
+			} else if (response.status === 'not_authorized') {
+				return false;
+			} else {
+				return false;
+			}
+		});
+	},
+
+	fb_get_friends: function(access_token, callback, fields) {
+		FB.api('/me/friends?'+ access_token + '&fields='+ fields, function(response) {
+			var friends = [];
+			if(response.data) {
+
+			// get all friends
+			$.each(response.data, function(index,friend) {
+				friends.push(friend);
+			});
+
+			// run call back
+			if (typeof callback == 'function') 
+				callback(friends);
+			} else {
+				console.log(response);
 			}
 		});
 	}
