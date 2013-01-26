@@ -42,13 +42,3 @@ App.Router = Backbone.Router.extend({
         }).el);
 	}
 });
-
-/*
-|--------------------------------------------------------
-|	Preload templates
-|--------------------------------------------------------
-*/
-tpl.loadTemplates(['login','form','progress'], function () {
-	App.Instance = new App.Router();
-	Backbone.history.start();
-});
