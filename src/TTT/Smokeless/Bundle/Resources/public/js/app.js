@@ -14,7 +14,7 @@ var App = {
 App.Router = Backbone.Router.extend({
 
 	routes: {
-		"": "login",
+		"": "form",
 		"form": "form",
 		"progress": "progress"
 	},
