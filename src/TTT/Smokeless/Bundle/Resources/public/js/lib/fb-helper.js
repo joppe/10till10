@@ -15,7 +15,7 @@ fbHelper = {
 					if (!api_response || api_response.error) {
 
 						// log error
-						console.log('fb api call did not succeed. response object: '+ $.param(api_response));
+						console.log('Facebook API call did not succeed. Response object: '+ $.param(api_response));
 						
 						// alert error
 						alert('Facebook error');
@@ -33,14 +33,14 @@ fbHelper = {
 	/**
 	 * Open graph action
 	 */
-	action: function (og_url) {
+	action: function (og_url, type) {
 		FB.api(
-			'/me/quitsmoker:quit',
+			'/me/quitsmoker:'+ type,
 			'post',
 			{ smoking: og_url },
 			function(response) {
 				if (!response || response.error) {
-					alert('test');
+					alert('Error posting open graph action');
 				}
 			}
 		);
@@ -49,7 +49,7 @@ fbHelper = {
 	/**
 	 * FB share
 	 */
-	share = function ($el, callback, options) {
+	share: function ($el, callback, options) {
 
 		// default options
 		var _options = {
