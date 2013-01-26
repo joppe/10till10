@@ -1,4 +1,3 @@
-
 /*
  * Main application
  */
@@ -25,30 +24,27 @@ App.Router = Backbone.Router.extend({
     },
 
 	login: function () {
-		$('#main').html(new App.Views.Login({
+		$('#app').html(new App.Views.Login({
             model: this.user
         }).el);
 	},
 
 	progress: function () {
-		$("#main").html(new App.Views.Progress({
+		$("#app").html(new App.Views.Progress({
             model: this.user
         }).el);
 	},
 
 	form: function () {
-		$("#main").html(new App.Views.Form({
+		$("#app").html(new App.Views.Form({
             model: this.user
         }).el);
 	}
 });
 
-/*
-|--------------------------------------------------------
-|	Preload templates
-|--------------------------------------------------------
-*/
-tpl.loadTemplates(['login','form','progress'], function () {
-	App.Instance = new App.Router();
-	Backbone.history.start();
+jQuery(function () {
+    var user = new App.Models.User();
+
+    App.Instance = new App.Router(user);
+    Backbone.history.start();
 });

@@ -22,34 +22,4 @@ class IndexController extends Controller
 //        return $this->redirect($this->generateUrl('ttt_smokeless__index_login'));
         return array();
     }
-
-
-    /**
-     * @Template
-     * @Route("/login")
-     */
-    function loginAction()
-    {
-        return array();
-    }
-
-
-    /**
-     * @Template
-     * @Route("/form")
-     */
-    function formAction()
-    {
-        return array();
-    }
-
-
-    /**
-     * @Template
-     * @Route("/progress")
-     */
-    function progressAction()
-    {
-        return array();
-    }
 }
