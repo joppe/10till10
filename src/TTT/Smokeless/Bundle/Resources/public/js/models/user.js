@@ -24,7 +24,7 @@ App.Models.User = Backbone.Model.extend({
         }
 
         Backbone.sync(method, this, {
-            url: 'rest',
+            url: '/app_dev.php/rest',
             success: function () {
                 success();
                 console.log('success');

@@ -32,7 +32,7 @@ fbHelper = {
 		}, {
 			scope: permissions
 		});
-	}
+	},
 
 	/**
 	 * Open graph action
