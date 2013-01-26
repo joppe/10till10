@@ -24,14 +24,24 @@ class User
     protected $id;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
-     */
-    protected $name = '';
-
-    /**
      * @ORM\Column(type="bigint", nullable=true)
      */
     protected $fb_uid = null;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $email = '';
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $gender = '';
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $name = '';
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -175,11 +185,21 @@ class User
         foreach ($data as $key => $value) {
             switch ($key) {
                 case 'id':
-                case 'fb_uid':
                     // skip
+                    break;
+                case 'fb_uid':
+                    if ($value !== $this->getFbUid()) {
+                        throw new \UnexpectedValueException("The fb_uid does not match");
+                    }
                     break;
                 case 'name':
                     $this->setName($value);
+                    break;
+                case 'email':
+                    $this->setEmail($value);
+                    break;
+                case 'gender':
+                    $this->setGender($value);
                     break;
                 case 'date_registered':
                 case 'date_last_fail':
@@ -204,6 +224,8 @@ class User
     {
         return array(
             'name'              => $this->getName(),
+            'email'             => $this->getEmail(),
+            'gender'            => $this->getGender(),
             'date_registered'   => $this->getDateRegistered('Y-m-d H:i:s'),
             'date_last_fail'    => $this->getDateLastFail('Y-m-d H:i:s'),
             'date_smoker_since' => $this->getDateSmokerSince('Y-m-d H:i:s'),
@@ -211,5 +233,25 @@ class User
             'number_per_pack'   => $this->getNumberPerPack(),
             'cost_per_pack'     => $this->getCostPerPack()
         );
+    }
+
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+    }
+
+    public function getGender()
+    {
+        return $this->gender;
     }
 }

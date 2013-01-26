@@ -4,6 +4,8 @@
 |--------------------------------------------------------
 */
 App.Models.User = Backbone.Model.extend({
+    url: '/app_dev.php/rest',
+
     defaults: {
         id: null,
         name: null,
@@ -24,7 +26,6 @@ App.Models.User = Backbone.Model.extend({
         }
 
         Backbone.sync(method, this, {
-            url: '/app_dev.php/rest',
             success: function () {
                 if (typeof success === 'function') {
                     success();
