@@ -57,10 +57,10 @@ App.Views.Form = Backbone.View.extend({
     },
 
     updateNumberPerPack: function () {
-        this.model.set('date_registered', $('#date_registered').val());
+        this.model.set('number_per_pack', $('#number_per_pack').val());
     },
 
     updateCostPerPack: function () {
-        this.model.set('date_registered', $('#date_registered').val());
+        this.model.set('cost_per_pack', $('#cost_per_pack').val());
     }
 });
