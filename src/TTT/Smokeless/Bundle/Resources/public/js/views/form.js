@@ -29,7 +29,7 @@ App.Views.Form = Backbone.View.extend({
 
 
         _.each(helper, function (attribute) {
-            $('#' + attribute).val(self.model.get(attribute));
+            self.$el.find('#' + attribute).val(self.model.get(attribute));
         });
 	},
 
