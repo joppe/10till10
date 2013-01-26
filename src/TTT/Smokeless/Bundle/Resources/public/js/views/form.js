@@ -18,7 +18,8 @@ App.Views.Form = Backbone.View.extend({
     },
 
 	initialize: function () {
-        var self = this;
+        var self = this,
+            helper = ['date_registered', 'date_smoker_since', 'number_per_day', 'number_per_pack', 'cost_per_pack'];
 
         this.template = _.template($('#tpl-form').html());
         this.render();
@@ -26,10 +27,9 @@ App.Views.Form = Backbone.View.extend({
         this.$el.find('#date_registered').datepicker();
         this.$el.find('#date_smoker_since').datepicker();
 
-        _.each(this.events, function (event) {
-            if (/^update/.test(event)) {
-                self[event]();
-            }
+
+        _.each(helper, function (attribute) {
+            $('#' + attribute).val(self.model.get(attribute));
         });
 	},
 
