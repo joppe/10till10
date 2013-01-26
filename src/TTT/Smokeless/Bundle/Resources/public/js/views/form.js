@@ -18,6 +18,8 @@ App.Views.Form = Backbone.View.extend({
     },
 
 	initialize: function () {
+        var self = this;
+
         this.template = _.template($('#tpl-form').html());
         this.render();
 
@@ -25,7 +27,9 @@ App.Views.Form = Backbone.View.extend({
         this.$el.find('#date_smoker_since').datepicker();
 
         _.each(this.events, function (event) {
-            console.log()
+            if (/^update/.test(event)) {
+                self[event]();
+            }
         });
 	},
 
