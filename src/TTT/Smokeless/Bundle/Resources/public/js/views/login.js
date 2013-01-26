@@ -5,6 +5,10 @@
 */
 App.Views.Login = Backbone.View.extend({
 
+    tagName: 'div',
+
+    className: 'login',
+
 	events: {
 		'click #fb-connect' : 'connect'
 	},
@@ -14,7 +18,8 @@ App.Views.Login = Backbone.View.extend({
 	},
 
 	render: function () {
-		$(this.el).html(tpl.get('login'));
+        console.log($(tpl.get('login')));
+//		$(this.el).html(tpl.get('login'));
 		return this;
 	},
 

@@ -14,11 +14,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class IndexController extends Controller
 {
     /**
+     * @Template
      * @Route("/")
      */
     function indexAction()
     {
-        return $this->redirect($this->generateUrl('ttt_smokeless__index_login'));
+//        return $this->redirect($this->generateUrl('ttt_smokeless__index_login'));
+        return array();
     }
 
 
