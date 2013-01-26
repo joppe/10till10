@@ -2,10 +2,6 @@ fbHelper = {
 
 	/**
 	 * fb login
-	 *
-	 * @param string, permissions
-	 * @param string, fields
-	 * @param function, callback
 	 */
 	login: function (permissions, fields, callback) {
 		FB.login(function(response) {
@@ -19,7 +15,7 @@ fbHelper = {
 					if (!api_response || api_response.error) {
 
 						// log error
-						console.log('fb api call did not succeed. response object: '+ $.param(api_response));
+						console.log('Facebook API call did not succeed. Response object: '+ $.param(api_response));
 						
 						// alert error
 						alert('Facebook error');
@@ -37,17 +33,49 @@ fbHelper = {
 	/**
 	 * Open graph action
 	 */
-	action: function (og_url) {
+	action: function (og_url, type) {
 		FB.api(
-			'/me/quitsmoker:quit',
+			'/me/quitsmoker:'+ type,
 			'post',
 			{ smoking: og_url },
 			function(response) {
 				if (!response || response.error) {
-					alert('test');
+					alert('Error posting open graph action');
 				}
 			}
 		);
+	},
+
+	/**
+	 * FB share
+	 */
+	share: function ($el, callback, options) {
+
+		// default options
+		var _options = {
+			method:			'feed',
+			name:			$el.data('fb_share_name'),
+			description:	$el.data('fb_share_description'),
+			link:			$el.data('fb_share_link'),
+			caption:		$el.data('fb_share_caption'),
+			picture:		$el.data('fb_share_picture')
+		};
+
+		// check for options
+		if (typeof options == 'object') {
+			for (var property in options) {
+				_options.property = options.property;
+			}
+		}
+	 
+	 	// share popup
+		FB.ui(_options, function(response) {
+			if (response && response.post_id) {
+				if (typeof callback == 'function') callback(response);
+			} else {
+				return false;
+			}
+		});
 	}
 
 };
